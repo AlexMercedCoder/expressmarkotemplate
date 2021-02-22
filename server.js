@@ -8,24 +8,24 @@ const {
   SECRET = "secret",
   NODE_ENV = "development",
 } = process.env;
-console.log(PORT);
 
 //Bringing in Express
 const express = require("express");
 const app = express();
-var exphbs = require("express-handlebars");
 
 //OTHER IMPORTS
 const session = require("express-session");
 const methodOverride = require("method-override");
 const morgan = require("morgan");
+const { log } = require("mercedlogger");
 
 ////////////////
 // Set View Engine
 ////////////////
 require("marko/node-require");
-var markoExpress = require("marko/express");
-app.use(markoExpress());
+var markoExpress = require("@marko/express");
+console.log(markoExpress)
+app.use(markoExpress.default());
 
 ////////////
 //MIDDLEWARE
@@ -53,5 +53,5 @@ app.get("/", (req, res) => {
 
 //LISTENER
 app.listen(PORT, () => {
-  console.log(`Your are listening on port ${PORT}`);
+  log.green("Server Start", `Your are listening on port ${PORT}`);
 });

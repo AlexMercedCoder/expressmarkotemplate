@@ -11,10 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@marko/express": "^1.0.0",
     "cross-env": "^7.0.2",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
-    "marko": "^4.23.9",
+    "mercedlogger": "^1.0.1",
     "method-override": "^3.0.0",
     "morgan": "^1.10.0",
     "yenv": "^2.1.1"
